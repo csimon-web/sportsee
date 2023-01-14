@@ -1,0 +1,33 @@
+/* @media (min-width: 576px) { }
+
+@media (min-width: 768px) { } */
+
+@media (min-width: 992px) {
+    * {
+        box-sizing: border-box;
+    }
+    
+    img {
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1200px) {
+    #root {
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1400px) { }
+
+/* @media (min-width: 576px) { }
+
+@media (min-width: 768px) { }
+
+@media (min-width: 992px) { }
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 1400px) { } */
