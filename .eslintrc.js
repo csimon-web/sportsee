@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        // "plugin:prettier/recommended"
     ],
     "overrides": [
     ],
@@ -13,9 +14,9 @@ module.exports = {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugin :prettier/recommended",
     "plugins": [
-        "react"
+        "react",
+        // "prettier/recommended"
     ],
     "rules": {
     }
