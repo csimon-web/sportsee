@@ -1,10 +1,12 @@
+import React from 'react';
+
 function NoMatch() {
-    return (
-      <main>
-        <h1>404</h1>
-      </main>
-    )
-  }
-  
-  export default NoMatch
+  return (
+    <main>
+      <h1>404</h1>
+    </main>
+  )
+}
+
+export default NoMatch
   

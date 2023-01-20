@@ -1,3 +1,4 @@
+import React from 'react';
 import Button from '../Button'
 import button1 from '../../assets/button1.png'
 import button2 from '../../assets/button2.png'

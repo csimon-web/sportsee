@@ -1,0 +1,20 @@
+.daily_activity_container {
+    position: relative;
+}
+
+.daily_activity_container__title {
+    position: absolute;
+    top: 27px;
+    left: 30px;
+    margin: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #20253A;
+}
+
+.daily_activity.container__chart {
+    width: 100%;
+}

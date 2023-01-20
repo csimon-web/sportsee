@@ -1,0 +1,40 @@
+.key_data {
+    display: flex;
+    align-items: center;
+    padding: 32px;
+    margin-bottom: 39px;
+}
+
+.key_data__icon {
+    width: 60px;
+    height: 60px;
+}
+
+.key_data__icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.key_data__data {
+    margin-left: 24px;;
+}
+
+.key_data__data__amount {
+    margin: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #282D30;
+}
+
+.key_data__data__name {
+    margin: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #74798C;
+}

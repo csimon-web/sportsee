@@ -1,5 +1,7 @@
+import React from 'react';
+
 function User() {
-      return (
+    return (
         <main>
             <h1>Profil</h1>
         </main>
