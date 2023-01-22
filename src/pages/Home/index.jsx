@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DailyActivityChart from '../../components/DailyActivityChart';
+import AverageSessionsChart from '../../components/AverageSessionsChart';
+import PerformanceChart from '../../components/PerformanceChart';
 import KeyDataChart from '../../components/KeyDataChart';
 import {useFetchUser, useFetchDailyActivity, useFetchAverageSessionDuration, useFetchPerformance} from '../../data/api.js'
 import '../../styles/Home.css'
@@ -15,6 +17,8 @@ function Home() {
 
   const typesOfActivities = performance?.kind || {};
   const [dailyActivityChartData, setDailyActivityChartData] = useState([]);
+  const [averageSessionsChartData, setAverageSessionsChartData] = useState([]);
+  const [performanceChartData, setPerformanceChartData] = useState([]);
   const keyDataChartData = user?.keyData || {};
 
   useEffect(() => {
@@ -35,7 +39,13 @@ function Home() {
     if(dailyActivity){
       setDailyActivityChartData(dailyActivity.sessions);
     }
-  }, [dailyActivity]);
+    if(averageSessionDuration){
+      setAverageSessionsChartData(averageSessionDuration.sessions);
+    }
+    if(performance){
+      setPerformanceChartData(performance.data);
+    }
+  }, [dailyActivity, averageSessionDuration, performance]);
 
   return (
     <div className='home_page'>
@@ -45,14 +55,22 @@ function Home() {
       </div>
       <div className='charts'>
         <div className="charts__left">
+        <div className='essai'>
+          {performanceChartData.map((data, index) => (
+            <div key={index}>{data.kind} - {data.value}</div>
+          ))}
+        </div>
+
           <div className="daily_activity">
             {dailyActivityChartData.length > 0 &&<DailyActivityChart dailyActivityChartData={dailyActivityChartData} />}
           </div>
           <div className="others">
-            <div className="others__1">
-              {completionOfDailyObjective && <p>{completionOfDailyObjective}</p>}
+            <div className="others__average_sessions">
+              {averageSessionsChartData.length > 0 && <AverageSessionsChart averageSessionsChartData={averageSessionsChartData} />}
             </div>
-            <div className="others__2">qsdf</div>
+            <div className="others__performance">
+              {performanceChartData.length > 0 && <PerformanceChart performanceChartData={performanceChartData} />}
+            </div>
             <div className="others__3">qds</div>
           </div>
         </div>

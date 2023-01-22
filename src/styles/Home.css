@@ -41,9 +41,8 @@
     justify-content: space-between;
 }
 
-.others__1, .others__2, .others__3 {
+.others__average_sessions, .others__performance, .others__3 {
     width: 32%;
-    border: 1px solid black;
 }
 
 .charts__right {

@@ -18,3 +18,21 @@
 .daily_activity.container__chart {
     width: 100%;
 }
+
+.custom_tooltip {
+    width: 39px;
+    border: none;
+    
+}
+
+.custom_tooltip p {
+    background: #E60000;
+    margin: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 7px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
