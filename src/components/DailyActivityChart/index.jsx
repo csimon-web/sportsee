@@ -4,6 +4,10 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Toolti
 import '../../styles/DailyActivityChart.css'
 
 const CustomTooltip = ({ active, payload }) => {
+  CustomTooltip.propTypes = {
+    active: PropTypes.bool.isRequired,
+    payload: PropTypes.array.isRequired,
+  }
   if (active && payload && payload.length) {
     return (
       <div className="custom_tooltip" style={{ width: "39px", border: "none" }}>
@@ -12,16 +16,16 @@ const CustomTooltip = ({ active, payload }) => {
       </div>
     );
   }
-  return null;
+  return null;s
 };
 
 function DailyActivityChart({ dailyActivityChartData }) {
   return (
-    <div className="daily_activity_container">
-      <p className='daily_activity_container__title'>Activité quotidienne</p>
+    <div className="daily_activity_chart_container">
+      <p className='daily_activity_chart_container__title'>Activité quotidienne</p>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
-          className='daily_activity_container__chart'
+          className='daily_activity_chart_container__chart'
           data={dailyActivityChartData}
           barGap={8}
           margin={{

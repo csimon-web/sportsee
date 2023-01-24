@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const userId = 12;
 
-export const useFetchData = (url, dataToReturn) => {
+export const useFetchData = (url, dataToReturn = 'data') => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -22,17 +22,17 @@ export const useFetchData = (url, dataToReturn) => {
 }
 
 export const useFetchUser = () => {
-    return useFetchData(`http://localhost:3000/user/${userId}`, "data");
+    return useFetchData(`http://localhost:3000/user/${userId}`);
 }
 
 export const useFetchDailyActivity = () => {
-    return useFetchData(`http://localhost:3000/user/${userId}/activity`, "data");
+    return useFetchData(`http://localhost:3000/user/${userId}/activity`);
 }
 
-export const useFetchAverageSessionDuration = () => {
-    return useFetchData(`http://localhost:3000/user/${userId}/average-sessions`, "data");
+export const useFetchSessionDuration = () => {
+    return useFetchData(`http://localhost:3000/user/${userId}/average-sessions`);
 }
 
 export const useFetchPerformance = () => {
-    return useFetchData(`http://localhost:3000/user/${userId}/performance`, "data");
+    return useFetchData(`http://localhost:3000/user/${userId}/performance`);
 }

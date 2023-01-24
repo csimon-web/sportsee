@@ -1,52 +1,88 @@
-.home_page {
-    width: 100%;
-    margin: 80px 0 0 100px;
+@media (min-width: 992px) {
+    .home_page {
+        margin-top: 80px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home_page__content {
+        width: 816px;
+    }
+
+    .welcome {}
+
+    .welcome__hello {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+
+    .welcome__hello .first_name {
+        color: #FF0101;
+    }
+
+    .welcome__message {
+        margin-bottom: 70px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .charts {
+        display: flex;
+        width: 100%;
+    }
+
+    .charts__left {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 724px;
+    }
+
+    .daily_activity {}
+
+    .others {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .others__average_sessions, .others__performance, .others__completion_of_daily_objective {
+        width: 32%;
+    }
+
+    .charts__right {
+        display: flex;
+        flex-direction: column;
+        width: 250spx;
+    }
 }
 
-.welcome {}
+@media (min-width: 1200px) {
+    /* .home_page {
+        max-width: 1182px;
+    } */
 
-.welcome__hello {
-    margin-top: 0;
-    margin-bottom: 40px;
+    .home_page__content {
+        width: 1016px;
+    }
+
+    .charts__left {
+        max-width: 924px;
+    }
 }
 
-.welcome__hello .first_name {
-    color: #FF0101;
-}
+@media (min-width: 1400px) {
+    .home_page {
+        max-width: 1223px;
+    }
 
-.welcome__message {
-    margin-bottom: 70px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-}
+    .home_page__content {
+        width: 1057px;
+    }
 
-.charts {
-    display: flex;
-    width: 100%;
-}
-
-.charts__left {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.daily_activity {}
-
-.others {
-    display: flex;
-    justify-content: space-between;
-}
-
-.others__average_sessions, .others__performance, .others__3 {
-    width: 32%;
-}
-
-.charts__right {
-    display: flex;
-    flex-direction: column;
-    width: 258px;
+    .charts__left {
+        max-width: 965px;
+    }
 }

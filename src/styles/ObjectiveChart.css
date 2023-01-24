@@ -1,0 +1,45 @@
+.objective_chart_container {
+    position: relative;
+    border-radius: 5px;
+    background-color: #E5E5E5;
+}
+
+.objective_chart_container__title {
+    position: absolute;
+    top: 27px;
+    left: 30px;
+    margin: 0;
+    z-index: 1;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #20253A;
+}
+
+.objective_chart_container__chart {
+    width: 100%;
+}
+
+.objective_chart_container__message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    z-index: 1;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #74798C;
+}
+
+.objective_chart_container__message__score {
+    font-weight: 700;
+    font-size: 26px;
+    color: #282D30;
+}

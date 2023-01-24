@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 main {
     display: none;
 }
@@ -21,14 +25,19 @@ main {
 }
 
 @media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
     #root {
-        max-width: 1240px;
+        max-width: 1440px;
         margin-left: auto;
         margin-right: auto;
     }
+    main {
+        max-width: 1440px;
+    }
 }
-
-@media (min-width: 1400px) { }
 
 /* @media (min-width: 576px) { }
 

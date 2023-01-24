@@ -2,9 +2,9 @@ import React from 'react';
 
 function Community() {
   return (
-    <main>
+    <div>
       <h1>Communauté</h1>
-    </main>
+    </div>
   )
 }
 
