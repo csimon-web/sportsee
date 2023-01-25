@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import '../../styles/DailyActivityChart.css'
 
+/**
+ * Custom tooltip component for the daily activity chart
+ * @param {Object} props - Component props
+ * @param {bool} props.active - Determines if the tooltip is active
+ * @param {array} props.payload - Array of data to be displayed in the tooltip
+ * @returns {JSX.Element} Custom tooltip content
+ */
 const CustomTooltip = ({ active, payload }) => {
   CustomTooltip.propTypes = {
     active: PropTypes.bool.isRequired,
@@ -19,6 +26,11 @@ const CustomTooltip = ({ active, payload }) => {
   return null;s
 };
 
+/**
+ * Daily activity chart component
+ * @param {Object} dailyActivityChartData - Data used to generate the chart
+ * @returns {JSX.Element} Daily activity chart content
+ */
 function DailyActivityChart({ dailyActivityChartData }) {
   return (
     <div className="daily_activity_chart_container">

@@ -1,78 +1,68 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import DailyActivityChart from '../../components/DailyActivityChart';
 import SessionDurationChart from '../../components/SessionDurationChart';
 import PerformanceChart from '../../components/PerformanceChart';
 import ObjectiveChart from '../../components/ObjectiveChart';
 import KeyDataChart from '../../components/KeyDataChart';
-import {useFetchUser, useFetchDailyActivity, useFetchSessionDuration, useFetchPerformance} from '../../data/api.js'
+import {useFetchAllData} from '../../data/api.js'
 import '../../styles/Home.css'
 
+/**
+ * Home page displaying different charts and user information
+ * @returns {JSX.Element} Home page content
+ */
 function Home() {
-  const user = useFetchUser();
-  const dailyActivity = useFetchDailyActivity();
-  const sessionDuration = useFetchSessionDuration();
-  const performance = useFetchPerformance();
-
-  const userFirstName = user?.userInfos?.firstName || '';
-  const [dailyActivityChartData, setDailyActivityChartData] = useState([]);
-  const [sessionDurationChartData, setSessionDurationChartData] = useState([]);
-  const [performanceChartData, setPerformanceChartData] = useState([]);
-  const [objectiveChartData, setObjectiveChartData] = useState([]);
-  // const completionOfDailyObjectiveChartData = user?.todayScore || '';
-  const keyDataChartData = user?.keyData || {};
-
-  useEffect(() => {
-    if(dailyActivity){
-      setDailyActivityChartData(dailyActivity.sessions);
-    }
-    if(sessionDuration){
-      setSessionDurationChartData(sessionDuration.sessions);
-    }
-    if(performance){
-      setPerformanceChartData(performance.data);
-    }
-    if(user){
-      setObjectiveChartData(user);
-    }
-    console.log(user);
-    console.log(dailyActivity);
-    console.log(sessionDuration);
-    console.log(performance);
-  }, [dailyActivity, sessionDuration, performance, user]);
+  const allData = useFetchAllData();
 
   return (
-    <div className='home_page'>
-      <div className="home_page__content">
-        <div className='welcome'>
-          <h1 className='welcome__hello'>Bonjour <span className='first_name'>{userFirstName}</span></h1>
-          <p className='welcome__message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-        </div>
-        <div className='charts'>
-          <div className="charts__left">
-            <div className="daily_activity">
-              {dailyActivityChartData.length > 0 &&<DailyActivityChart dailyActivityChartData={dailyActivityChartData} />}
-            </div>
-            <div className="others">
-              <div className="others__average_sessions">
-                {sessionDurationChartData.length > 0 && <SessionDurationChart sessionDurationChartData={sessionDurationChartData} />}
-              </div>
-              <div className="others__performance">
-                {performanceChartData.length > 0 && <PerformanceChart performanceChartData={performanceChartData} />}
-              </div>
-              <div className="others__completion_of_daily_objective">
-              {user && <ObjectiveChart user={user} />}
-              </div>
-            </div>
+    allData ?
+      <div className='home_page'>
+        <div className="home_page__content">
+          <div className='welcome'>
+            <h1 className='welcome__hello'>Bonjour <span className='first_name'>{allData.user.userInfos.firstName}</span></h1>
+            <p className='welcome__message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
           </div>
-          <div className="charts__right">
-            {Object.entries(keyDataChartData).map(([keyName, keyValue]) => (
-              <KeyDataChart key={keyName} keyName={keyName} keyValue={keyValue} />
-            ))}
+          <div className='charts'>
+            <div className="charts__left">
+              <div className="daily_activity">
+                {allData.dailyActivity.sessions.length > 0 &&<DailyActivityChart dailyActivityChartData={allData.dailyActivity.sessions} />}
+              </div>
+              <div className="others">
+                <div className="others__average_sessions">
+                  {allData.sessionDuration.sessions.length > 0 && <SessionDurationChart sessionDurationChartData={allData.sessionDuration.sessions} />}
+                </div>
+                <div className="others__performance">
+                  {allData.performance.data.length > 0 && <PerformanceChart performanceChartData={allData.performance.data} />}
+                </div>
+                <div className="others__completion_of_daily_objective">
+                  {allData.user && <ObjectiveChart user={allData.user} />}
+                </div>
+              </div>
+            </div>
+            <div className="charts__right">
+              {Object.entries(allData.user.keyData).map(([keyName, keyValue]) => (
+                <KeyDataChart key={keyName} keyName={keyName} keyValue={keyValue} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      : 
+      <div className='home_page'>
+        <div className="home_page__content">
+          <p>En attente des données...</p>
+        </div>
+      </div>
   )
 }
+
+Home.propTypes = {
+  allData: PropTypes.object.isRequired
+};
+
+Home.defaultProps = {
+  allData: {}
+};
 
 export default Home

@@ -3,16 +3,26 @@ import PropTypes from 'prop-types';
 import { ResponsiveContainer, PieChart, Pie, Sector, Cell } from 'recharts';
 import '../../styles/ObjectiveChart.css';
 
+/**
+ * Formats the user's score data for use in the objective chart
+ * @param {Object} user - The user data to format. Expects an object with a property "todayScore".
+ * @returns {Array} Formatted score data in the form of an array of objects with "name" and "score" properties
+ */
 function formattedScore(user) {
     if(user && user.todayScore) {
-      return [
-        { name: "today", score: user.todayScore },
-        { name: "remainder", score: 1 - user.todayScore }
-      ];
+        return [
+            { name: "today", score: user.todayScore },
+            { name: "remainder", score: 1 - user.todayScore }
+        ];
     }
     return [];
-  }
+}
 
+/**
+ * Objective chart component
+ * @param {Object} user - Data used to generate the chart
+ * @returns {JSX.Element} Objective chart content
+ */
 function ObjectiveChart({ user }) {
     const COLORS = ['#FF0000', '#FFF'];
     return (
@@ -48,65 +58,3 @@ ObjectiveChart.propTypes = {
 }
 
 export default ObjectiveChart;
-  
-
-
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import { ResponsiveContainer, RadialBarChart, RadialBar, PolarAngleAxis } from 'recharts';
-// import '../../styles/ObjectiveChart.css';
-
-// function formattedScore(user) {
-//     if(user && user.todayScore) {
-//       return [
-//         { name: "today", score: user.todayScore, fill: "#FF0000" }
-//         // ,
-//         // { name: "remainder", score: 1 - user.todayScore }
-//       ];
-//     }
-//     return [];
-// }
-
-// const data = [
-//     {
-//       "name": "18-24",
-//       "uv": 31.47,
-//       "pv": 2400,
-//       "fill": "#8884d8"
-//     },
-//     {
-//       "name": "25-29",
-//       "uv": 26.69,
-//       "pv": 4567,
-//       "fill": "#83a6ed"
-//     }
-// ]
-
-// function ObjectiveChart({ user }) {
-//     return (
-//         <div className="objective_chart_container">
-//             <p className='objective_chart_container__title'>Score</p>
-//             <ResponsiveContainer width='100%' height={300}>
-//                 <RadialBarChart
-//                     className='objective_chart_container__chart'
-//                     data={data} 
-//                     startAngle={90} 
-//                     endAngle={450} >
-//                     <RadialBar 
-//                         dataKey= "pv" 
-//                         fill= '#FF0000'  />
-//                     <PolarAngleAxis type="number" />
-//                     <circle cx="50%" cy="50%" fill="#FFF" r="85"></circle>
-//                 </RadialBarChart>
-//             </ResponsiveContainer>
-//             <p className="objective_chart_container__message"><span className='objective_chart_container__message__score'>{user.todayScore * 100}%</span><br />de votre<br />objectif</p>
-//         </div>
-//     );
-// }
-
-// ObjectiveChart.propTypes = {
-//     user: PropTypes.object.isRequired
-// }
-
-// export default ObjectiveChart;
-  

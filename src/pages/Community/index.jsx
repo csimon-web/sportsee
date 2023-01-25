@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * Community page
+ * @returns {JSX.Element} Community page content
+ */
 function Community() {
   return (
     <div>

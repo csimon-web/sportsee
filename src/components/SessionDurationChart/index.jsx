@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceArea } from 'recharts';
 import '../../styles/SessionDurationChart.css';
 
+/**
+ * Formats the x-axis data of the session duration chart
+ * @param {String} value - The data to format. Expects a number between 1 and 7 representing a day of the week.
+ * @returns {Array} Formatted data to display on the x-axis of the chart. Returns 'L', 'M', 'J', 'V', 'S', 'D' for Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday respectively.
+ */
 const formattedXAxis = (value) => {
   switch(value) {
     case 1:
@@ -23,6 +28,13 @@ const formattedXAxis = (value) => {
   }
 }
 
+/**
+ * Custom tooltip component for the session duration chart
+ * @param {Object} props - Component props
+ * @param {bool} props.active - Determines if the tooltip is active
+ * @param {array} props.payload - Array of data to be displayed in the tooltip
+ * @returns {JSX.Element} Custom tooltip content
+ */
 const CustomTooltip = ({ active, payload }) => {
   CustomTooltip.propTypes = {
     active: PropTypes.bool.isRequired,
@@ -38,6 +50,11 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+/**
+ * Session duration chart component
+ * @param {Object} sessionDurationChartData - Data used to generate the chart. Expects an array of objects with properties "day" and "sessionLength".
+ * @returns {JSX.Element} Session duration chart content
+ */
 function SessionDurationChart({ sessionDurationChartData }) {
   SessionDurationChart.propTypes = {
     sessionDurationChartData: PropTypes.arrayOf(

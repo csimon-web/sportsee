@@ -1,38 +1,31 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const userId = 12;
-
-export const useFetchData = (url, dataToReturn = 'data') => {
+/**
+ * Fetch all data from the server for a given user
+ * @returns {object} All data required for different charts
+ */
+export const useFetchAllData = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(url);
-                const data = await response.json();
-                setData(data[dataToReturn]);
+                const [user, dailyActivity, sessionDuration, performance] = await Promise.all([
+                    fetch(`http://localhost:3000/user/${userId}`).then(response => response.json()).then(data => data.data),
+                    fetch(`http://localhost:3000/user/${userId}/activity`).then(response => response.json()).then(data => data.data),
+                    fetch(`http://localhost:3000/user/${userId}/average-sessions`).then(response => response.json()).then(data => data.data),
+                    fetch(`http://localhost:3000/user/${userId}/performance`).then(response => response.json()).then(data => data.data)
+                ]);
+
+                setData({ user, dailyActivity, sessionDuration, performance });
             } catch (error) {
-                console.error(`Error fetching data from ${url}: `, error);
+                console.error(`Erreur de récupération de toutes les données: `, error);
             }
         };
+
         fetchData();
     }, []);
 
     return data;
-}
-
-export const useFetchUser = () => {
-    return useFetchData(`http://localhost:3000/user/${userId}`);
-}
-
-export const useFetchDailyActivity = () => {
-    return useFetchData(`http://localhost:3000/user/${userId}/activity`);
-}
-
-export const useFetchSessionDuration = () => {
-    return useFetchData(`http://localhost:3000/user/${userId}/average-sessions`);
-}
-
-export const useFetchPerformance = () => {
-    return useFetchData(`http://localhost:3000/user/${userId}/performance`);
 }

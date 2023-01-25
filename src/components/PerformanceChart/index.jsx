@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
 // import '../../styles/PerformanceChart.css'
 
+/**
+ * Formats the angle data of the performance chart
+ * @param {number} value - The data to format. It should be a number representing the kind of data.
+ * @returns {string} Formatted data to display on the performance chart. The returned value will be "Cardio" when value is 1, "Energie" when value is 2, etc.
+ */
 const formattedPolarAngleData = (value) => {
     switch(value) {
       case 1:
@@ -22,7 +27,11 @@ const formattedPolarAngleData = (value) => {
     }
 }
 
-
+/**
+ * Performance chart component
+ * @param {Object} performanceChartData - Data used to generate the chart. Expects an array of objects with properties "kind" and "value".
+ * @returns {JSX.Element} Performance chart content
+ */
 function PerformanceChart({ performanceChartData }) {
   PerformanceChart.propTypes = {
     performanceChartData: PropTypes.arrayOf(PropTypes.shape({

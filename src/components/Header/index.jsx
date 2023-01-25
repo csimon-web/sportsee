@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/logo512.png'
 import '../../styles/Header.css'
 
+/**
+ * Header component
+ * @returns {JSX.Element} Header content
+ */
 function Header() {
   return (
     <header className="header">

@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/KeyData.css'
 
+/**
+ * Key data component
+ * @param {Object} props - Component props
+ * @param {string} props.keyName - Name of the key data to display
+ * @param {number} props.keyValue - Value of the key data to display
+ * @returns {JSX.Element} Key data content
+ */
 const KeyData = ({ keyName, keyValue }) => {
   let icon;
   let name;

@@ -6,6 +6,10 @@ import button3 from '../../assets/button3.png'
 import button4 from '../../assets/button4.png'
 import '../../styles/LeftMenu.css'
 
+/**
+ * Left menu component
+ * @returns {JSX.Element} Left menu content
+ */
 function LeftMenu() {
   return (
     <div className="left_menu">

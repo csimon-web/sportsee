@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * User page
+ * @returns {JSX.Element} User page content
+ */
 function User() {
     return (
         <div>
@@ -9,3 +13,4 @@ function User() {
 }
 
 export default User
+
