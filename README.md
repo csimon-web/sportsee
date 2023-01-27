@@ -1,8 +1,92 @@
-# Getting Started with Create React App
+<!-- PROJECT SHIELDS -->
+<!--
+*** This template uses markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url]
 
-## Available Scripts
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Sportsee app Screen Shot][product-screenshot]]
+
+This project was realized during my training as a javascript/react developer for a fictitious company wanting to create a web application dedicated to physical exercises.
+
+This web application had to respect [a given mock up](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR).
+
+It had to be developed with React and D3 or Recharts (libraries enabling to display graphs), and use the data about the physical exercises of a user from an API.
+
+
+
+### Built With
+
+- Markdown, Html, Css, Javascript
+- React
+- Git, Github
+- VS Code
+- Love :)
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+- Git
+- Npm
+- Yarn
+
+### Installation
+ 
+1. Open a terminal
+
+2. Clone the repo of the back end project
+```sh
+git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
+```
+
+3. Go to this back end project directory
+```sh
+cd P9-front-end-dashboard
+```
+
+4. Install the dependencies of this project
+```sh
+yarn
+```
+
+5. Launch this back end project
+```sh
+yarn dev
+```
+
+6. Return to the parent directory
+```sh
+cd ..
+```
+
+7. Clone this repo
+```sh
+git clone https://github.com/christophe-simon/sportsee
+```
+
+8. Go to this project directory
+```sh
+cd sportsee
+```
+
+9. Install the dependencies of this project
+```sh
+npm install
+```
+
+<!-- USAGE EXAMPLES -->
+## Usage
 
 In the project directory, you can run:
 
@@ -68,3 +152,38 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Christophe Simon: [personnal website](https://www.csimon.info)
+
+Project Link: [https://github.com/christophe-simon/sportsee](https://github.com/christophe-simon/sportsee)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+- This readme version is a simplified version of this [github repository](https://github.com/othneildrew/Best-README-Template) by Othneildrew
+- This readme version is a customized version of this [github repository](https://github.com/NicolasBrondin/basic-readme-template) by NicolasBrondin
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/christophe-simon/sportsee.svg?style=flat-square
+[contributors-url]: https://github.com/christophe-simon/sportsee/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/christophe-simon/sportsee.svg?style=flat-square
+[forks-url]: https://github.com/christophe-simon/sportsee/network/members
+[stars-shield]: https://img.shields.io/github/stars/christophe-simon/sportsee.svg?style=flat-square
+[stars-url]: https://github.com/christophe-simon/sportsee/stargazers
+[issues-shield]: https://img.shields.io/github/issues/christophe-simon/sportsee.svg?style=flat-square
+[issues-url]: https://github.com/christophe-simon/sportsee/issues
+[license-shield]: https://img.shields.io/github/license/christophe-simon/sportsee.svg?style=flat-square
+[license-url]: https://github.com/christophe-simon/sportsee/blob/master/LICENSE.txt
+[product-screenshot]: docs/screenshot.jpg

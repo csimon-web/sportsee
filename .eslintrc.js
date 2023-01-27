@@ -6,7 +6,7 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:prettier/recommended"
+        // "plugin:prettier/recommended"
     ],
     "overrides": [
     ],
@@ -16,7 +16,7 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "prettier/recommended"
+        // "prettier/recommended"
     ],
     "rules": {
     }
