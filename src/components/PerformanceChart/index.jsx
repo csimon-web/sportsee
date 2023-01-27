@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
+import { ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis } from 'recharts';
 // import '../../styles/PerformanceChart.css'
 
 /**
@@ -55,6 +55,6 @@ function PerformanceChart({ performanceChartData }) {
           </RadarChart>
       </ResponsiveContainer>
   );
-};
+}
     
 export default PerformanceChart;

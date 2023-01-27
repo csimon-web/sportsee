@@ -79,6 +79,6 @@ function SessionDurationChart({ sessionDurationChartData }) {
       </ResponsiveContainer>
     </div>
   );
-};
+}
 
 export default SessionDurationChart;
