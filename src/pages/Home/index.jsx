@@ -13,56 +13,80 @@ import '../../styles/Home.css'
  * @returns {JSX.Element} Home page content
  */
 function Home() {
-  const allData = useFetchAllData();
+  const { data, error, loading } = useFetchAllData();
 
-  return (
-    allData ?
+  if (loading) {
+    return (
+      <div className='home_page'>
+        <div className="home_page__content">
+          <p>Chargement des données...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className='home_page'>
+        <div className="home_page__content">
+          <p>Erreur lors de la récupération des données: {error.message}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (data && Object.keys(data).length > 0) {
+    return (
       <div className='home_page'>
         <div className="home_page__content">
           <div className='welcome'>
-            <h1 className='welcome__hello'>Bonjour <span className='first_name'>{allData.user.userInfos.firstName}</span></h1>
+            <h1 className='welcome__hello'>Bonjour <span className='first_name'>{data.user.userInfos.firstName}</span></h1>
             <p className='welcome__message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
           </div>
           <div className='charts'>
             <div className="charts__left">
               <div className="daily_activity">
-                {allData.dailyActivity.sessions.length > 0 &&<DailyActivityChart dailyActivityChartData={allData.dailyActivity.sessions} />}
+                {data.dailyActivity.sessions.length > 0 &&<DailyActivityChart dailyActivityChartData={data.dailyActivity.sessions} />}
               </div>
               <div className="others">
                 <div className="others__average_sessions">
-                  {allData.sessionDuration.sessions.length > 0 && <SessionDurationChart sessionDurationChartData={allData.sessionDuration.sessions} />}
+                  {data.sessionDuration.sessions.length > 0 && <SessionDurationChart sessionDurationChartData={data.sessionDuration.sessions} />}
                 </div>
                 <div className="others__performance">
-                  {allData.performance.data.length > 0 && <PerformanceChart performanceChartData={allData.performance.data} />}
+                  {data.performance.data.length > 0 && <PerformanceChart performanceChartData={data.performance.data} />}
                 </div>
                 <div className="others__completion_of_daily_objective">
-                  {allData.user && <ObjectiveChart user={allData.user} />}
+                  {data.user && <ObjectiveChart user={data.user} />}
                 </div>
               </div>
             </div>
             <div className="charts__right">
-              {Object.entries(allData.user.keyData).map(([keyName, keyValue]) => (
+              {Object.entries(data.user.keyData).map(([keyName, keyValue]) => (
                 <KeyDataChart key={keyName} keyName={keyName} keyValue={keyValue} />
               ))}
             </div>
           </div>
         </div>
       </div>
-      : 
+    )
+  } else {
+    return (
       <div className='home_page'>
         <div className="home_page__content">
-          <p>En attente des données...</p>
+          <p>Aucune donnée disponible</p>
         </div>
       </div>
-  )
+    );
+  }
+
 }
 
 Home.propTypes = {
-  allData: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 };
 
 Home.defaultProps = {
-  allData: {}
+  data: {}
 };
 
 export default Home

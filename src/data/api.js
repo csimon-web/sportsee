@@ -7,6 +7,8 @@ const userId = 12;
  */
 export const useFetchAllData = () => {
     const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,13 +21,15 @@ export const useFetchAllData = () => {
                 ]);
 
                 setData({ user, dailyActivity, sessionDuration, performance });
+                setLoading(false);
             } catch (error) {
-                console.error(`Erreur de récupération de toutes les données: `, error);
+                setError(error);
+                setLoading(false);
             }
         };
 
         fetchData();
     }, []);
 
-    return data;
+    return { data, error, loading };
 }
