@@ -12,8 +12,8 @@ import '../../styles/DailyActivityChart.css'
  */
 const CustomTooltip = ({ active, payload }) => {
   CustomTooltip.propTypes = {
-    active: PropTypes.bool.isRequired,
-    payload: PropTypes.array.isRequired,
+    active: PropTypes.bool,
+    payload: PropTypes.array,
   }
   if (active && payload && payload.length) {
     return (
