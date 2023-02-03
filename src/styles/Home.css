@@ -9,6 +9,10 @@
         width: 816px;
     }
 
+    .source_selector {
+        margin-bottom: 100px;
+    }
+
     .welcome {}
 
     .welcome__hello {

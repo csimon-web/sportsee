@@ -8,25 +8,25 @@ import '../../styles/SessionDurationChart.css';
  * @param {String} value - The data to format. Expects a number between 1 and 7 representing a day of the week.
  * @returns {Array} Formatted data to display on the x-axis of the chart. Returns 'L', 'M', 'J', 'V', 'S', 'D' for Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday respectively.
  */
-const formattedXAxis = (value) => {
-  switch(value) {
-    case 1:
-      return 'L';
-    case 2:
-    case 3:
-      return 'M';
-    case 4:
-      return 'J';
-    case 5:
-      return 'V';
-    case 6:
-      return 'S';
-    case 7:
-      return 'D';
-    default:
-      return value;
-  }
-}
+// const formattedXAxis = (value) => {
+//   switch(value) {
+//     case 1:
+//       return 'L';
+//     case 2:
+//     case 3:
+//       return 'M';
+//     case 4:
+//       return 'J';
+//     case 5:
+//       return 'V';
+//     case 6:
+//       return 'S';
+//     case 7:
+//       return 'D';
+//     default:
+//       return value;
+//   }
+// }
 
 /**
  * Custom tooltip component for the session duration chart
@@ -69,7 +69,7 @@ function SessionDurationChart({ sessionDurationChartData }) {
       <p className='average_sessions_chart_container__title'>Durée moyenne des sessions</p>
       <ResponsiveContainer width='100%' height={300}>
         <LineChart className='average_sessions_chart_container__chart' data={sessionDurationChartData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }} style={{ background: "#FF0000", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.0212249)", borderRadius: "5px" }}>
-          <XAxis dataKey="day" axisLine={false} tickLine={false} padding={{ left: 20, right: 20 }} stroke="rgba(255, 255, 255, 0.6)" interval={"preserveStartEnd"} tick={{fontFamily: "Roboto", fontStyle: "normal", fontWeight: 500, fontSize: 12 }}tickFormatter={formattedXAxis} />
+          <XAxis dataKey="dayInFrench" axisLine={false} tickLine={false} padding={{ left: 20, right: 20 }} stroke="rgba(255, 255, 255, 0.6)" interval={"preserveStartEnd"} tick={{fontFamily: "Roboto", fontStyle: "normal", fontWeight: 500, fontSize: 12 }} />
           <YAxis hide padding={{ top: 100, bottom: 0 }} />
           <CartesianGrid horizontal={false} vertical={false} stroke="#EEE" strokeDasharray="5 5" />
           <Line type="natural" dataKey="sessionLength" dot={false} activeDot={{ stroke: "rgba(255, 255, 255, 0.6)", strokeWidth: 10, r: 5 }} stroke="rgba(255, 255, 255, 0.6)" strokeWidth={2} />
