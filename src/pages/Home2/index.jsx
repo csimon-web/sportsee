@@ -6,7 +6,7 @@ import SessionDurationChart from '../../components/SessionDurationChart';
 import PerformanceChart from '../../components/PerformanceChart';
 import ObjectiveChart from '../../components/ObjectiveChart';
 import KeyDataChart from '../../components/KeyDataChart';
-import fetchAllData from '../../data/apiData2.js';
+import fetchAllData from '../../data/apiData.js';
 import mockedData from '../../data/mockedData.js';
 import formatData from '../../data/dataFormatting.js';
 import '../../styles/Home.css';
@@ -59,7 +59,7 @@ function Home2() {
   }
 
   if (!loading && !error) {
-    const formattedData = formatData(data)
+    // const formattedData = formatData(data)
     console.log("data")
     console.log(data)
     // console.log("user")
@@ -71,8 +71,8 @@ function Home2() {
     // console.log("performance")
     // console.log(data.performance)
 
-    console.log("formattedData")
-    console.log(formattedData)
+    // console.log("formattedData")
+    // console.log(formattedData)
 
     // return (
     //   <div>
