@@ -42,8 +42,7 @@ function formatXAxisSessionDurationChart(value) {
 
 function formatData(data) {
   const formattedData = JSON.parse(JSON.stringify(data));
-  console.log(formattedData.user.id)
-  // const formattedData = {...data}
+
   // formattedData.sessionDuration.sessions = formattedData.sessionDuration.sessions.map(session => {
   //   let dayInFrench;
   //   switch (session.day) {
@@ -55,18 +54,23 @@ function formatData(data) {
   //       dayInFrench = "M";
   //       break;
   //     case 4:
+  //       dayInFrench = "J";
+  //       break;
   //     case 5:
-  //       dayInFrench = "Me";
+  //       dayInFrench = "V";
   //       break;
   //     case 6:
+  //       dayInFrench = "S";
+  //       break;
   //     case 7:
-  //       dayInFrench = "J";
+  //       dayInFrench = "D";
   //       break;
   //     default:
   //       dayInFrench = "";
   //   }
   //   return {...session, dayInFrench};
   // });
+
   return formattedData;
 }
   

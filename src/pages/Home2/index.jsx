@@ -12,7 +12,7 @@ import formatData from '../../data/dataFormatting.js';
 import '../../styles/Home.css';
 
 function Home2() {
-  const [dataSource, setDataSource] = useState('API');
+  const [dataSource, setDataSource] = useState('Mock');
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ function Home2() {
         } else {
           allData = mockedData;
         }
-        setData(allData);
+        setData(formatData(allData));
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -59,34 +59,10 @@ function Home2() {
   }
 
   if (!loading && !error) {
-    // const formattedData = formatData(data)
-    console.log("data")
-    console.log(data)
-    // console.log("user")
-    // console.log(data.user)
-    // console.log("dailyActivity")
-    // console.log(data.dailyActivity)
-    // console.log("sessionDuration")
-    // console.log(data.sessionDuration)
-    // console.log("performance")
-    // console.log(data.performance)
-
-    // console.log("formattedData")
-    // console.log(formattedData)
-
-    // return (
-    //   <div>
-    //     {data.map((object, index) => (
-    //       <div key={index}>
-    //         <p>{object}</p>
-    //       </div>
-    //     ))}
-    //   </div>
-    // );
-
+  console.log(data.user.id)
   }
 
-  // if (formattedData && Object.keys(formattedData).length > 0) {
+  // if (data && Object.keys(data).length > 0) {
   //   return (
   //     <div className='home_page'>
   //       <div className="home_page__content">
