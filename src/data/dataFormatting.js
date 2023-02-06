@@ -1,75 +1,70 @@
-function formatXAxisSessionDurationChart(value) {
-  switch(value) {
-    case 1:
-      return 'L';
-    case 2:
-    case 3:
-      return 'M';
-    case 4:
-      return 'J';
-    case 5:
-      return 'V';
-    case 6:
-      return 'S';
-    case 7:
-      return 'D';
-    default:
-      return value;
-  }
-}
-
-// function formatUser(data.user) {
-//   return {
-//     user: {
-//       id: data.user.id,
-//       userInfos: {
-//         firstName: data.user.userInfos.firstName,
-//         lastName: data.user.userInfos.lastName,
-//         age: data.user.userInfos.age
-//       },
-//       todayScore: data.user.todayScore,
-//       keyData: {
-//         calorieCount: data.user.keyData.calorieCount,
-//         proteinCount: data.user.keyData.proteinCount,
-//         carbohydrateCount: data.user.keyData.carbohydrateCount,
-//         lipidCount: data.user.keyData.lipidCount
-//       }
-//     }
-//   }
-// }
-
-// export default formatUser;
-
+/**
+ * Formats the input data to meet the desired format.
+ * @param {Object} data - The data that needs to be formatted.
+ * @returns {Object} - The formatted data.
+ */
 function formatData(data) {
   const formattedData = JSON.parse(JSON.stringify(data));
 
-  // formattedData.sessionDuration.sessions = formattedData.sessionDuration.sessions.map(session => {
-  //   let dayInFrench;
-  //   switch (session.day) {
-  //     case 1:
-  //       dayInFrench = "L";
-  //       break;
-  //     case 2:
-  //     case 3:
-  //       dayInFrench = "M";
-  //       break;
-  //     case 4:
-  //       dayInFrench = "J";
-  //       break;
-  //     case 5:
-  //       dayInFrench = "V";
-  //       break;
-  //     case 6:
-  //       dayInFrench = "S";
-  //       break;
-  //     case 7:
-  //       dayInFrench = "D";
-  //       break;
-  //     default:
-  //       dayInFrench = "";
-  //   }
-  //   return {...session, dayInFrench};
-  // });
+  formattedData.user.todayScore = [
+    { name: "today", score: formattedData.user.todayScore },
+    { name: "remainder", score: 1 - formattedData.user.todayScore }
+    ];
+
+  formattedData.sessionDuration.sessions = formattedData.sessionDuration.sessions.map(session => {
+    let dayInFrench;
+    switch (session.day) {
+      case 1:
+        dayInFrench = "L";
+        break;
+      case 2:
+      case 3:
+        dayInFrench = "M";
+        break;
+      case 4:
+        dayInFrench = "J";
+        break;
+      case 5:
+        dayInFrench = "V";
+        break;
+      case 6:
+        dayInFrench = "S";
+        break;
+      case 7:
+        dayInFrench = "D";
+        break;
+      default:
+        dayInFrench = "";
+    }
+    return {...session, dayInFrench};
+  });
+
+  formattedData.performance.data = formattedData.performance.data.map(entry => {
+    let kindInFrench;
+    switch (entry.kind) {
+      case 1:
+        kindInFrench = "Cardio";
+        break;
+      case 2:
+        kindInFrench = "Energie";
+        break;
+      case 3:
+        kindInFrench = "Endurance";
+        break;
+      case 4:
+        kindInFrench = "Force";
+        break;
+      case 5:
+        kindInFrench = "Vitesse";
+        break;
+      case 6:
+        kindInFrench = "Intensité";
+        break;
+      default:
+        kindInFrench = "";
+    }
+    return {...entry, kindInFrench};
+  });
 
   return formattedData;
 }

@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Home2 from './pages/Home2'
+import Home from './pages/Home'
 import User from './pages/User'
 import Settings from './pages/Settings'
 import Community from './pages/Community'
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         <SmallScreens />
         <main>
           <LeftMenu />
-          <Home2 />
+          <Home />
         </main>
       </>
     ),

@@ -4,31 +4,6 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tool
 import '../../styles/SessionDurationChart.css';
 
 /**
- * Formats the x-axis data of the session duration chart
- * @param {String} value - The data to format. Expects a number between 1 and 7 representing a day of the week.
- * @returns {Array} Formatted data to display on the x-axis of the chart. Returns 'L', 'M', 'J', 'V', 'S', 'D' for Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday respectively.
- */
-// const formattedXAxis = (value) => {
-//   switch(value) {
-//     case 1:
-//       return 'L';
-//     case 2:
-//     case 3:
-//       return 'M';
-//     case 4:
-//       return 'J';
-//     case 5:
-//       return 'V';
-//     case 6:
-//       return 'S';
-//     case 7:
-//       return 'D';
-//     default:
-//       return value;
-//   }
-// }
-
-/**
  * Custom tooltip component for the session duration chart
  * @param {Object} props - Component props
  * @param {bool} props.active - Determines if the tooltip is active

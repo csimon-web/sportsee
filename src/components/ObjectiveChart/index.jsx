@@ -4,21 +4,6 @@ import { ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import '../../styles/ObjectiveChart.css';
 
 /**
- * Formats the user's score data for use in the objective chart
- * @param {Object} user - The user data to format. Expects an object with a property "todayScore".
- * @returns {Array} Formatted score data in the form of an array of objects with "name" and "score" properties
- */
-function formattedScore(user) {
-    if(user && user.todayScore) {
-        return [
-            { name: "today", score: user.todayScore },
-            { name: "remainder", score: 1 - user.todayScore }
-        ];
-    }
-    return [];
-}
-
-/**
  * Objective chart component
  * @param {Object} user - Data used to generate the chart
  * @returns {JSX.Element} Objective chart content
@@ -32,7 +17,7 @@ function ObjectiveChart({ user }) {
                 <PieChart>
                     <Pie
                         className='objective_chart_container__chart'
-                        data={formattedScore(user)}
+                        data={user.todayScore}
                         cy={150}
                         startAngle={90}
                         endAngle={450}
@@ -42,13 +27,13 @@ function ObjectiveChart({ user }) {
                         paddingAngle={0}
                         dataKey="score"
                     >
-                    {formattedScore(user).map((entry, index) => (
+                    {user.todayScore.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                     </Pie>
                 </PieChart>
             </ResponsiveContainer>
-            <p className="objective_chart_container__message"><span className='objective_chart_container__message__score'>{user.todayScore * 100}%</span><br />de votre<br />objectif</p>
+            <p className="objective_chart_container__message"><span className='objective_chart_container__message__score'>{user.todayScore.find(entry => entry.name === 'today').score * 100}%</span><br />de votre<br />objectif</p>
         </div>
     );
 }
