@@ -24,6 +24,7 @@ function Home() {
         let allData;
         if (dataSource === 'API') {
           allData = await fetchAllData();
+          allData = allData.data;
         } else {
           allData = mockedData;
         }
@@ -31,7 +32,7 @@ function Home() {
         setData(data)
         setLoading(false);
         setIsDataLoaded(true);
-        console.log(data)
+        // console.log(data)
       } catch (error) {
         setError(error);
         setLoading(false);

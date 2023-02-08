@@ -2,7 +2,7 @@ const mockedData = {
   user: {
     id: 12,
     userInfos: {
-      firstName: "Carl",
+      firstName: "Karl",
       lastName: "Dovineau",
       age: 31
     },
