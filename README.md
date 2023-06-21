@@ -25,7 +25,7 @@ It had to be developed with React and D3 or Recharts (libraries enabling to disp
 ### Built With
 
 - Markdown, Html, Css, Javascript
-- React
+- React, React Router, Recharts
 - Git, Github
 - VS Code
 - Love :)
