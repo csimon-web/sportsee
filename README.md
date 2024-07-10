@@ -7,13 +7,15 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
+# SportSee: react physical exercises statistics project
+
 [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url]
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-[![Sportsee app Screen Shot][product-screenshot]]
+[![Sportsee app screenshot][product-screenshot]](#)
 
 This project was realized during my training as a javascript/react developer for a fictitious company wanting to create a web application dedicated to physical exercises.
 
