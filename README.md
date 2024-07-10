@@ -10,6 +10,7 @@
 [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url]
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 [![Sportsee app Screen Shot][product-screenshot]]
@@ -20,17 +21,15 @@ This web application had to respect [a given mock up](https://www.figma.com/file
 
 It had to be developed with React and D3 or Recharts (libraries enabling to display graphs), and use the data about the physical exercises of a user from an API.
 
-
-
 ### Built With
 
-- Markdown, Html, Css, Javascript
+- HTML, CSS, Javascript
 - React, React Router, Recharts
-- Git, Github
+- Git
 - VS Code
-- Love :)
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
@@ -38,152 +37,95 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 - Git
-- Npm
 - Yarn
 
 ### Installation
- 
+
 1. Open a terminal
 
 2. Clone the repo of the back end project
+
 ```sh
-git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
+git clone https://github.com/csimon-web/sportsee-backend.git
 ```
 
 3. Go to this back end project directory
+
 ```sh
-cd P9-front-end-dashboard
+cd sportsee-backend
 ```
 
 4. Install the dependencies of this project
+
 ```sh
-yarn
+yarn install
 ```
 
 5. Launch this back end project
+
 ```sh
 yarn dev
 ```
 
-6. Return to the parent directory
-```sh
-cd ..
-```
+6. Open a new terminal
 
 7. Clone this repo
+
 ```sh
-git clone https://github.com/christophe-simon/sportsee
+git clone https://github.com/csimon-web/sportsee.git
 ```
 
 8. Go to this project directory
+
 ```sh
 cd sportsee
 ```
 
 9. Install the dependencies of this project
+
 ```sh
-npm install
+yarn install
 ```
 
+10. Launch the project
+
+```sh
+yarn start
+```
+
+11. Open [http://localhost:3000](http://localhost:3000) to view the result in your browser.
+
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
+In this project, you can only access to the home page displaying the data. However, you can choose to display the data from the API or from a json file. The displayed result will be the same as, the data are the same.
 
 <!-- CONTACT -->
+
 ## Contact
 
 Christophe Simon: [personnal website](https://www.csimon.info)
 
-Project Link: [https://github.com/christophe-simon/sportsee](https://github.com/christophe-simon/sportsee)
-
-
+Project Link: [https://github.com/csimon-web/sportsee](https://github.com/csimon-web/sportsee)
 
 <!-- ACKNOWLEDGEMENTS -->
+
 ## Acknowledgements
 
-- This readme version is a simplified version of this [github repository](https://github.com/othneildrew/Best-README-Template) by Othneildrew
 - This readme version is a customized version of this [github repository](https://github.com/NicolasBrondin/basic-readme-template) by NicolasBrondin
-
-
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/christophe-simon/sportsee.svg?style=flat-square
-[contributors-url]: https://github.com/christophe-simon/sportsee/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/christophe-simon/sportsee.svg?style=flat-square
-[forks-url]: https://github.com/christophe-simon/sportsee/network/members
-[stars-shield]: https://img.shields.io/github/stars/christophe-simon/sportsee.svg?style=flat-square
-[stars-url]: https://github.com/christophe-simon/sportsee/stargazers
-[issues-shield]: https://img.shields.io/github/issues/christophe-simon/sportsee.svg?style=flat-square
-[issues-url]: https://github.com/christophe-simon/sportsee/issues
-[license-shield]: https://img.shields.io/github/license/christophe-simon/sportsee.svg?style=flat-square
-[license-url]: https://github.com/christophe-simon/sportsee/blob/master/LICENSE.txt
+
+[contributors-shield]: https://img.shields.io/github/contributors/csimon-web/sportsee.svg?style=flat-square
+[contributors-url]: https://github.com/csimon-web/sportsee/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/csimon-web/sportsee.svg?style=flat-square
+[forks-url]: https://github.com/csimon-web/sportsee/network/members
+[stars-shield]: https://img.shields.io/github/stars/csimon-web/sportsee.svg?style=flat-square
+[stars-url]: https://github.com/csimon-web/sportsee/stargazers
+[issues-shield]: https://img.shields.io/github/issues/csimon-web/sportsee.svg?style=flat-square
+[issues-url]: https://github.com/csimon-web/sportsee/issues
+[license-shield]: https://img.shields.io/github/license/csimon-web/sportsee.svg?style=flat-square
+[license-url]: https://github.com/csimon-web/sportsee/blob/master/LICENSE.txt
 [product-screenshot]: docs/screenshot.jpg
